@@ -12,7 +12,7 @@ table_names = subprocess.Popen(["mdb-tables", "-1", DATABASE],
 tables = table_names.splitlines()
 sys.stdout.flush()
 # Dump each table as a stringio using "mdb-export",
-out_tables = {}
+""" out_tables = {}
 for rtable in tables:
     table = rtable.decode()
     if VERBOSE: print('running table:',table)
@@ -22,4 +22,4 @@ for rtable in tables:
                                     stdout=subprocess.PIPE).communicate()[0]
         temp_io = StringIO(contents.decode())
         print(table, temp_io)
-        out_tables[table] = pd.read_csv(temp_io)
+        out_tables[table] = pd.read_csv(temp_io) """
